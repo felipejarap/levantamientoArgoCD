@@ -1,0 +1,17 @@
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMServiceScrape
+metadata:
+  name: nginx-metrics
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: nginx-demo
+  namespaceSelector:
+    any: false
+    matchNames:
+      - default
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s
