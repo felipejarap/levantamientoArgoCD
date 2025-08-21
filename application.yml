@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/felipejarap/levantamientoArgoCD
-    targetRevision: HEAD
+    targetRevision: master
     path: . 
     helm:
       releaseName: nginx-demo
